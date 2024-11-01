@@ -4,7 +4,7 @@ import java.util.Scanner;
  *
  * @author breno
  */
-public class AulaIfElse {
+public class Aula {
 
     /**
      * @param args the command line arguments
