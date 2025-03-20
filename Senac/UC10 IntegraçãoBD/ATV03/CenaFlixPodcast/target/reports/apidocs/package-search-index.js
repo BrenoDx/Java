@@ -1,1 +1,0 @@
-packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"l":"cenaflix.gui"},{"l":"cenaflix.persistencia"}];updateSearchResults();
