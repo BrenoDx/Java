@@ -4,17 +4,20 @@
  */
 package app;
 
+import entities.Calculator;
+
 /**
  *
  * @author breno
  */
 public class Main extends javax.swing.JFrame {
-
+    Calculator calculator = new Calculator();
     /**
      * Creates new form Main
      */
     public Main() {
         initComponents();
+        
     }
 
     /**
@@ -32,6 +35,7 @@ public class Main extends javax.swing.JFrame {
         LbSum = new javax.swing.JLabel();
         LbSum2 = new javax.swing.JLabel();
         LbOperator = new javax.swing.JLabel();
+        LbResult = new javax.swing.JLabel();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
@@ -74,25 +78,32 @@ public class Main extends javax.swing.JFrame {
         javax.swing.GroupLayout OutPanelLayout = new javax.swing.GroupLayout(OutPanel);
         OutPanel.setLayout(OutPanelLayout);
         OutPanelLayout.setHorizontalGroup(
-            OutPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            OutPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
             .addGroup(OutPanelLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(LbSum, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(LbOperator, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(24, 24, 24))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, OutPanelLayout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(LbSum2, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap()
+                .addComponent(LbResult, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(OutPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, OutPanelLayout.createSequentialGroup()
+                        .addComponent(LbSum, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(LbOperator, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(24, 24, 24))
+                    .addComponent(LbSum2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)))
         );
         OutPanelLayout.setVerticalGroup(
             OutPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, OutPanelLayout.createSequentialGroup()
+            .addGroup(OutPanelLayout.createSequentialGroup()
                 .addGroup(OutPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(LbOperator, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(LbSum, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(LbSum2, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(OutPanelLayout.createSequentialGroup()
+                        .addGroup(OutPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(LbOperator, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(LbSum, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(LbSum2, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(OutPanelLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(LbResult, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -157,6 +168,11 @@ public class Main extends javax.swing.JFrame {
         jButton12.setText(",");
 
         jButtonResult.setText("=");
+        jButtonResult.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonResultActionPerformed(evt);
+            }
+        });
 
         jButtonAddition.setText("+");
         jButtonAddition.addActionListener(new java.awt.event.ActionListener() {
@@ -300,6 +316,7 @@ public class Main extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
@@ -352,23 +369,40 @@ public class Main extends javax.swing.JFrame {
 
     private void jButtonAdditionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAdditionActionPerformed
         LbSum.setText(LbSum2.getText());
+        LbSum2.setText("");
         LbOperator.setText("+");
     }//GEN-LAST:event_jButtonAdditionActionPerformed
 
     private void jButtonLessActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonLessActionPerformed
         LbSum.setText(LbSum2.getText());
+        LbSum2.setText("");
         LbOperator.setText("-");
     }//GEN-LAST:event_jButtonLessActionPerformed
 
     private void jButtonMultiplicationActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonMultiplicationActionPerformed
         LbSum.setText(LbSum2.getText());
+        LbSum2.setText("");
         LbOperator.setText("X");
     }//GEN-LAST:event_jButtonMultiplicationActionPerformed
 
     private void jButtonDivisionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonDivisionActionPerformed
         LbSum.setText(LbSum2.getText());
+        LbSum2.setText("");
         LbOperator.setText("/");
     }//GEN-LAST:event_jButtonDivisionActionPerformed
+
+    private void jButtonResultActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonResultActionPerformed
+        double num1 = Double.parseDouble(LbSum.getText());
+        double num2 = Double.parseDouble(LbSum2.getText());
+        
+        switch(LbOperator.getText()){
+            case "+":
+                double result = calculator.addition(num1, num2);
+                LbResult.setText(String.format("%.2f", result));
+                break;
+                
+        }
+    }//GEN-LAST:event_jButtonResultActionPerformed
 
     /**
      * @param args the command line arguments
@@ -407,6 +441,7 @@ public class Main extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel LbOperator;
+    private javax.swing.JLabel LbResult;
     private javax.swing.JLabel LbSum;
     private javax.swing.JLabel LbSum2;
     private javax.swing.JPanel OutPanel;
