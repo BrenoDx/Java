@@ -19,3 +19,15 @@ This repository contains a collection of projects and challenges developed to pr
 
 Cada pasta representa um projeto ou desafio, contendo seus próprios arquivos de código, instruções e recursos adicionais.
 
+## 🇺🇸 English
+
+### 🧠 Purpose
+
+- Practice programming logic
+- Develop skills with different tools  
+- Track technical progress  
+- Build a portfolio
+
+### 📁 Structure
+
+Each folder represents a specific project or challenge, containing its own code files, instructions, and additional resources.
