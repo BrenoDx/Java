@@ -11,13 +11,15 @@ import entities.Calculator;
  * @author breno
  */
 public class Main extends javax.swing.JFrame {
+
     Calculator calculator = new Calculator();
+
     /**
      * Creates new form Main
      */
     public Main() {
         initComponents();
-        
+
     }
 
     /**
@@ -320,7 +322,7 @@ public class Main extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        LbSum2.setText(LbSum2.getText()+"2");
+        LbSum2.setText(LbSum2.getText() + "2");
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButtonPercentageActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonPercentageActionPerformed
@@ -328,43 +330,43 @@ public class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonPercentageActionPerformed
 
     private void jButton0ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton0ActionPerformed
-        LbSum2.setText(LbSum2.getText()+"0");
+        LbSum2.setText(LbSum2.getText() + "0");
     }//GEN-LAST:event_jButton0ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        LbSum2.setText(LbSum2.getText()+"1");
+        LbSum2.setText(LbSum2.getText() + "1");
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        LbSum2.setText(LbSum2.getText()+"3");
+        LbSum2.setText(LbSum2.getText() + "3");
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        LbSum2.setText(LbSum2.getText()+"4");
+        LbSum2.setText(LbSum2.getText() + "4");
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-        LbSum2.setText(LbSum2.getText()+"5");
+        LbSum2.setText(LbSum2.getText() + "5");
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
-        LbSum2.setText(LbSum2.getText()+"6");
+        LbSum2.setText(LbSum2.getText() + "6");
     }//GEN-LAST:event_jButton6ActionPerformed
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
-        LbSum2.setText(LbSum2.getText()+"7");
+        LbSum2.setText(LbSum2.getText() + "7");
     }//GEN-LAST:event_jButton7ActionPerformed
 
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
-        LbSum2.setText(LbSum2.getText()+"8");
+        LbSum2.setText(LbSum2.getText() + "8");
     }//GEN-LAST:event_jButton8ActionPerformed
 
     private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
-        LbSum2.setText(LbSum2.getText()+"9");
+        LbSum2.setText(LbSum2.getText() + "9");
     }//GEN-LAST:event_jButton9ActionPerformed
 
     private void jButtonClearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonClearActionPerformed
-        LbSum2.setText("");
+        clear();
     }//GEN-LAST:event_jButtonClearActionPerformed
 
     private void jButtonAdditionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAdditionActionPerformed
@@ -394,13 +396,15 @@ public class Main extends javax.swing.JFrame {
     private void jButtonResultActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonResultActionPerformed
         double num1 = Double.parseDouble(LbSum.getText());
         double num2 = Double.parseDouble(LbSum2.getText());
-        
-        switch(LbOperator.getText()){
+        double result;
+        switch (LbOperator.getText()) {
             case "+":
-                double result = calculator.addition(num1, num2);
+                result = calculator.addition(num1, num2);
                 LbResult.setText(String.format("%.2f", result));
                 break;
-                
+            case "-":
+                result = calculator.less(num1, num2);
+                LbResult.setText(String.format("%.2f", result));
         }
     }//GEN-LAST:event_jButtonResultActionPerformed
 
@@ -466,4 +470,11 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JButton jButtonPercentage;
     private javax.swing.JButton jButtonResult;
     // End of variables declaration//GEN-END:variables
+
+    public void clear() {
+        LbSum2.setText("");
+        LbSum.setText("");
+        LbOperator.setText("");
+        LbResult.setText("");
+    }
 }
