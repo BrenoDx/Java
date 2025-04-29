@@ -1,30 +1,40 @@
-# Exercícios sobre Estrutura Sequencial
-Este repositório contém exercícios propostos pelo curso do Nelio Alves Java completo da UDEMY e implementados por mim, abordando a construção de estruturas sequencial (Entrada, processamento, saída).
+# Exercícios sobre Estrutura Sequencial | Sequential Structure Exercises
+## 🇧🇷 Descrição | Description 🇺🇸
 
-## 🚀 Lista de Exercícios
-1. Faça um programa para ler dois valores intieros, e depois mostrar na tela a soma desses números com uma mensagem explicativa.
----------
-2. Faça um programa para ler o valor do raio de um círculo, e depois mostrar o valor da área deste círculo com quatro casas decimais.
----------
-3. Fazer um programa que leia o número de um funcionário, seu número de horas trabalhadas, o valor que recebe por hora e calcula o salário desse funcionário. A seguir, mostre o número e o salário do funcionário, com duas casas decimais.
----------
-4. Fazer um programa que leia o número de um funcionário, seu número de horas trabalhadas, o valor que recebe por hora e calcula o salário desse funcionário. A seguir, mostre o número e o salário do funcionário, com duas casas decimais.
----------
-5. Fazer um programa para ler o código de uma peça 1, o número de peças 1, o valor unitário de cada peça 1, o
-código de uma peça 2, o número de peças 2 e o valor unitário de cada peça 2. Calcule e mostre o valor a ser pago
----------
-6. Fazer um programa que leia três valores com ponto flutuante de dupla precisão: A, B e C. Em seguida, calcule e
-mostre:
+### 📌 🇧🇷 Descrição
+Este repositório contém exercícios propostos pelo curso **Java Completo** do **Nelio Alves** (Udemy) e implementados por mim, focando a prática de **estruturas sequenciais** (entrada, processamento e saída de dados).
 
-        a) a área do triângulo retângulo que tem A por base e C por altura.
+### 📌 🇺🇸 Description
+This repository contains exercises proposed by the **Complete Java Course** by **Nelio Alves** (Udemy) and implemented by me, focusing on practicing **sequential structures** (input, processing, and output of data).
 
-        b) a área do círculo de raio C. (pi = 3.14159)
+---
 
-        c) a área do trapézio que tem A e B por bases e C por altura.
+## 🚀 Lista de Exercícios | Exercise List
 
-        d) a área do quadrado que tem lado B.
+-  **🇧🇷 Faça um programa para ler dois valores inteiros e mostrar a soma com uma mensagem explicativa.**  
+  **🇺🇸 Write a program to read two integer values and display their sum with an explanatory message.**
 
-        e) a área do retângulo que tem lados A e B
-## 💻 Ferramentas utilizadas
-- Apache NetBeans IDE 23
-- Java 23
+-  **🇧🇷 Faça um programa para ler o valor do raio de um círculo e mostrar a área com quatro casas decimais.**  
+  **🇺🇸 Write a program to read the radius of a circle and display its area with four decimal places.**
+
+-  **🇧🇷 Leia o número, horas trabalhadas e valor/hora de um funcionário e calcule o salário.**  
+  **🇺🇸 Read the employee's ID, worked hours, and hourly rate, then calculate and display the salary.**
+
+-  **🇧🇷 Leia o código, quantidade e valor unitário de duas peças e calcule o valor total a pagar.**  
+  **🇺🇸 Read the code, quantity, and unit price of two parts and calculate the total payment.**
+
+-  **🇧🇷 Leia três valores A, B e C, e calcule:**  
+  **🇺🇸 Read three values A, B, and C, then calculate:**
+  
+          a) Área do triângulo retângulo (Triangle area)
+          b) Área do círculo (Circle area)
+          c) Área do trapézio (Trapezium area)
+          d) Área do quadrado (Square area)
+          e) Área do retângulo (Rectangle area)
+
+---
+
+## 💻 Ferramentas Utilizadas | Tools Used
+
+- 🧠 **Apache NetBeans IDE 23**  
+- ☕ **Java 23**
