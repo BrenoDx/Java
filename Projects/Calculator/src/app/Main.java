@@ -384,7 +384,7 @@ public class Main extends javax.swing.JFrame {
     private void jButtonMultiplicationActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonMultiplicationActionPerformed
         LbSum.setText(LbSum2.getText());
         LbSum2.setText("");
-        LbOperator.setText("X");
+        LbOperator.setText("*");
     }//GEN-LAST:event_jButtonMultiplicationActionPerformed
 
     private void jButtonDivisionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonDivisionActionPerformed
@@ -405,6 +405,15 @@ public class Main extends javax.swing.JFrame {
             case "-":
                 result = calculator.less(num1, num2);
                 LbResult.setText(String.format("%.2f", result));
+                break;
+            case "*":
+                result = calculator.multiplication(num1, num2);
+                LbResult.setText(String.format("%.2f", result));
+                break;
+            case "/":
+                result = calculator.division(num1, num2);
+                LbResult.setText(String.format("%.2f", result));
+                break;
         }
     }//GEN-LAST:event_jButtonResultActionPerformed
 
