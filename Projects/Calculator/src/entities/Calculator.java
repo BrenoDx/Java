@@ -25,4 +25,8 @@ public class Calculator {
     public double division(double num1, double num2){
         return num1 / num2;  
     }
+    
+    public double percentage(double num1){
+        return num1/100;
+    }
 }

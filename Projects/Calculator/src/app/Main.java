@@ -87,11 +87,13 @@ public class Main extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(OutPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, OutPanelLayout.createSequentialGroup()
-                        .addComponent(LbSum, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(LbSum, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(LbOperator, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(24, 24, 24))
-                    .addComponent(LbSum2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(LbOperator, javax.swing.GroupLayout.PREFERRED_SIZE, 12, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(39, 39, 39))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, OutPanelLayout.createSequentialGroup()
+                        .addComponent(LbSum2, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap())))
         );
         OutPanelLayout.setVerticalGroup(
             OutPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -326,7 +328,8 @@ public class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButtonPercentageActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonPercentageActionPerformed
-        // TODO add your handling code here:
+        double num2 = calculator.percentage(Double.parseDouble(LbSum2.getText()));
+        LbSum2.setText(String.format("%.2f", num2));
     }//GEN-LAST:event_jButtonPercentageActionPerformed
 
     private void jButton0ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton0ActionPerformed
@@ -394,8 +397,8 @@ public class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonDivisionActionPerformed
 
     private void jButtonResultActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonResultActionPerformed
-        double num1 = Double.parseDouble(LbSum.getText());
-        double num2 = Double.parseDouble(LbSum2.getText());
+        double num1 = Double.parseDouble(LbSum.getText().replace(",", "."));
+        double num2 = Double.parseDouble(LbSum2.getText().replace(",", "."));
         double result;
         switch (LbOperator.getText()) {
             case "+":
