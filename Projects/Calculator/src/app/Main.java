@@ -54,7 +54,6 @@ public class Main extends javax.swing.JFrame {
         jButtonMultiplication = new javax.swing.JButton();
         jButtonDivision = new javax.swing.JButton();
         jButtonPercentage = new javax.swing.JButton();
-        jButton19 = new javax.swing.JButton();
         jButtonClear = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -73,6 +72,7 @@ public class Main extends javax.swing.JFrame {
             }
         });
 
+        OutPanel.setBackground(new java.awt.Color(255, 255, 255));
         OutPanel.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         LbSum2.setFont(new java.awt.Font("sansserif", 0, 18)); // NOI18N
@@ -168,6 +168,11 @@ public class Main extends javax.swing.JFrame {
         });
 
         jButton11.setText("+/-");
+        jButton11.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton11ActionPerformed(evt);
+            }
+        });
 
         jButton12.setText(",");
 
@@ -212,8 +217,6 @@ public class Main extends javax.swing.JFrame {
                 jButtonPercentageActionPerformed(evt);
             }
         });
-
-        jButton19.setText("BACK");
 
         jButtonClear.setText("C");
         jButtonClear.addActionListener(new java.awt.event.ActionListener() {
@@ -261,8 +264,7 @@ public class Main extends javax.swing.JFrame {
                                     .addGap(6, 6, 6)
                                     .addComponent(jButton8, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(jButton9, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addComponent(jButton19))
+                                    .addComponent(jButton9, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE))))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jButtonMultiplication, javax.swing.GroupLayout.DEFAULT_SIZE, 49, Short.MAX_VALUE)
@@ -314,9 +316,7 @@ public class Main extends javax.swing.JFrame {
                     .addComponent(jButton11)
                     .addComponent(jButton12)
                     .addComponent(jButtonResult))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jButton19)
-                .addContainerGap(29, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
@@ -420,6 +420,10 @@ public class Main extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jButtonResultActionPerformed
 
+    private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton11ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -465,7 +469,6 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton11;
     private javax.swing.JButton jButton12;
-    private javax.swing.JButton jButton19;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
