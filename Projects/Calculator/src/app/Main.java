@@ -11,7 +11,8 @@ import entities.Calculator;
  * @author breno
  */
 public class Main extends javax.swing.JFrame {
-
+    String aux = "";
+    String numeroPosi;
     Calculator calculator = new Calculator();
 
     /**
@@ -376,24 +377,28 @@ public class Main extends javax.swing.JFrame {
         LbSum.setText(LbSum2.getText());
         LbSum2.setText("");
         LbOperator.setText("+");
+        aux = "";
     }//GEN-LAST:event_jButtonAdditionActionPerformed
 
     private void jButtonLessActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonLessActionPerformed
         LbSum.setText(LbSum2.getText());
         LbSum2.setText("");
         LbOperator.setText("-");
+        aux = "";
     }//GEN-LAST:event_jButtonLessActionPerformed
 
     private void jButtonMultiplicationActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonMultiplicationActionPerformed
         LbSum.setText(LbSum2.getText());
         LbSum2.setText("");
         LbOperator.setText("*");
+        aux = "";
     }//GEN-LAST:event_jButtonMultiplicationActionPerformed
 
     private void jButtonDivisionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonDivisionActionPerformed
         LbSum.setText(LbSum2.getText());
         LbSum2.setText("");
         LbOperator.setText("/");
+        aux = "";
     }//GEN-LAST:event_jButtonDivisionActionPerformed
 
     private void jButtonResultActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonResultActionPerformed
@@ -421,7 +426,15 @@ public class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonResultActionPerformed
 
     private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
-        // TODO add your handling code here:
+        if(aux.equals("")){
+        numeroPosi = LbSum2.getText();
+        LbSum2.setText("-" + LbSum2.getText());
+        aux = "-";
+        }else{
+            LbSum2.setText(numeroPosi);
+            numeroPosi = "";
+            aux = "";
+        }       
     }//GEN-LAST:event_jButton11ActionPerformed
 
     /**
@@ -491,5 +504,6 @@ public class Main extends javax.swing.JFrame {
         LbSum.setText("");
         LbOperator.setText("");
         LbResult.setText("");
+        aux = "";
     }
 }
