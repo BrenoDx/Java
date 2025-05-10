@@ -32,13 +32,13 @@ public class Main extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jButton0 = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
         OutPanel = new javax.swing.JPanel();
         LbSum = new javax.swing.JLabel();
         LbSum2 = new javax.swing.JLabel();
         LbOperator = new javax.swing.JLabel();
         LbResult = new javax.swing.JLabel();
+        jButton0 = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
@@ -47,31 +47,17 @@ public class Main extends javax.swing.JFrame {
         jButton7 = new javax.swing.JButton();
         jButton8 = new javax.swing.JButton();
         jButton9 = new javax.swing.JButton();
-        jButton11 = new javax.swing.JButton();
-        jButton12 = new javax.swing.JButton();
+        jButtonNegative = new javax.swing.JButton();
+        jButtonComma = new javax.swing.JButton();
         jButtonResult = new javax.swing.JButton();
         jButtonAddition = new javax.swing.JButton();
-        jButtonLess = new javax.swing.JButton();
+        jButtonSubtraction = new javax.swing.JButton();
         jButtonMultiplication = new javax.swing.JButton();
         jButtonDivision = new javax.swing.JButton();
         jButtonPercentage = new javax.swing.JButton();
         jButtonClear = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-
-        jButton0.setText("0");
-        jButton0.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton0ActionPerformed(evt);
-            }
-        });
-
-        jButton1.setText("1");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
 
         OutPanel.setBackground(new java.awt.Color(255, 255, 255));
         OutPanel.setBorder(javax.swing.BorderFactory.createEtchedBorder());
@@ -111,6 +97,20 @@ public class Main extends javax.swing.JFrame {
                         .addComponent(LbResult, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
+
+        jButton0.setText("0");
+        jButton0.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton0ActionPerformed(evt);
+            }
+        });
+
+        jButton1.setText("1");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         jButton2.setText("2");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -168,14 +168,19 @@ public class Main extends javax.swing.JFrame {
             }
         });
 
-        jButton11.setText("+/-");
-        jButton11.addActionListener(new java.awt.event.ActionListener() {
+        jButtonNegative.setText("+/-");
+        jButtonNegative.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton11ActionPerformed(evt);
+                jButtonNegativeActionPerformed(evt);
             }
         });
 
-        jButton12.setText(",");
+        jButtonComma.setText(",");
+        jButtonComma.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonCommaActionPerformed(evt);
+            }
+        });
 
         jButtonResult.setText("=");
         jButtonResult.addActionListener(new java.awt.event.ActionListener() {
@@ -191,10 +196,10 @@ public class Main extends javax.swing.JFrame {
             }
         });
 
-        jButtonLess.setText("-");
-        jButtonLess.addActionListener(new java.awt.event.ActionListener() {
+        jButtonSubtraction.setText("-");
+        jButtonSubtraction.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonLessActionPerformed(evt);
+                jButtonSubtractionActionPerformed(evt);
             }
         });
 
@@ -242,7 +247,7 @@ public class Main extends javax.swing.JFrame {
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jButton11, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(jButtonNegative, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(jButton0, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addGroup(layout.createSequentialGroup()
@@ -252,7 +257,7 @@ public class Main extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, 46, Short.MAX_VALUE)
-                                    .addComponent(jButton12, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                                    .addComponent(jButtonComma, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                 .addGroup(layout.createSequentialGroup()
                                     .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -269,7 +274,7 @@ public class Main extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jButtonMultiplication, javax.swing.GroupLayout.DEFAULT_SIZE, 49, Short.MAX_VALUE)
-                            .addComponent(jButtonLess, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jButtonSubtraction, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jButtonAddition, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jButtonResult, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jButtonDivision, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
@@ -301,7 +306,7 @@ public class Main extends javax.swing.JFrame {
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jButton5)
                         .addComponent(jButton6)
-                        .addComponent(jButtonLess)))
+                        .addComponent(jButtonSubtraction)))
                 .addGap(12, 12, 12)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jButton1)
@@ -314,8 +319,8 @@ public class Main extends javax.swing.JFrame {
                 .addGap(12, 12, 12)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton0)
-                    .addComponent(jButton11)
-                    .addComponent(jButton12)
+                    .addComponent(jButtonNegative)
+                    .addComponent(jButtonComma)
                     .addComponent(jButtonResult))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -380,12 +385,12 @@ public class Main extends javax.swing.JFrame {
         aux = "";
     }//GEN-LAST:event_jButtonAdditionActionPerformed
 
-    private void jButtonLessActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonLessActionPerformed
+    private void jButtonSubtractionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSubtractionActionPerformed
         LbSum.setText(LbSum2.getText());
         LbSum2.setText("");
         LbOperator.setText("-");
         aux = "";
-    }//GEN-LAST:event_jButtonLessActionPerformed
+    }//GEN-LAST:event_jButtonSubtractionActionPerformed
 
     private void jButtonMultiplicationActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonMultiplicationActionPerformed
         LbSum.setText(LbSum2.getText());
@@ -411,7 +416,7 @@ public class Main extends javax.swing.JFrame {
                 LbResult.setText(String.format("%.2f", result));
                 break;
             case "-":
-                result = calculator.less(num1, num2);
+                result = calculator.subtraction(num1, num2);
                 LbResult.setText(String.format("%.2f", result));
                 break;
             case "*":
@@ -425,7 +430,7 @@ public class Main extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jButtonResultActionPerformed
 
-    private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
+    private void jButtonNegativeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonNegativeActionPerformed
         if(aux.equals("")){
         numeroPosi = LbSum2.getText();
         LbSum2.setText("-" + LbSum2.getText());
@@ -435,7 +440,11 @@ public class Main extends javax.swing.JFrame {
             numeroPosi = "";
             aux = "";
         }       
-    }//GEN-LAST:event_jButton11ActionPerformed
+    }//GEN-LAST:event_jButtonNegativeActionPerformed
+
+    private void jButtonCommaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCommaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButtonCommaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -480,8 +489,6 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JPanel OutPanel;
     private javax.swing.JButton jButton0;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton11;
-    private javax.swing.JButton jButton12;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
@@ -492,11 +499,13 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JButton jButton9;
     private javax.swing.JButton jButtonAddition;
     private javax.swing.JButton jButtonClear;
+    private javax.swing.JButton jButtonComma;
     private javax.swing.JButton jButtonDivision;
-    private javax.swing.JButton jButtonLess;
     private javax.swing.JButton jButtonMultiplication;
+    private javax.swing.JButton jButtonNegative;
     private javax.swing.JButton jButtonPercentage;
     private javax.swing.JButton jButtonResult;
+    private javax.swing.JButton jButtonSubtraction;
     // End of variables declaration//GEN-END:variables
 
     public void clear() {
