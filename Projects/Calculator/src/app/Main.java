@@ -443,7 +443,7 @@ public class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonNegativeActionPerformed
 
     private void jButtonCommaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCommaActionPerformed
-        // TODO add your handling code here:
+        LbSum2.setText(LbSum2.getText()+",");
     }//GEN-LAST:event_jButtonCommaActionPerformed
 
     /**
