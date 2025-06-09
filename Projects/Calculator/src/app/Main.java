@@ -5,6 +5,7 @@
 package app;
 
 import entities.Calculator;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -424,8 +425,12 @@ public class Main extends javax.swing.JFrame {
                 LbResult.setText(String.format("%.2f", result));
                 break;
             case "/":
+                if(num2 != 0){
                 result = calculator.division(num1, num2);
                 LbResult.setText(String.format("%.2f", result));
+                }else{
+                    JOptionPane.showMessageDialog(null, "Erro!\nDivisor não pode ser 0");
+                }
                 break;
         }
     }//GEN-LAST:event_jButtonResultActionPerformed
