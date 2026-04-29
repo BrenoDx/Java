@@ -6,17 +6,18 @@ void main() {
 
     Locale.setDefault(Locale.US);
     Scanner sc = new Scanner(System.in);
-    Produtos produto = new Produtos();
+    // Produtos produto = new Produtos();
 
     System.out.print("Informe nome do produto:");
-    produto.nome = sc.nextLine();
+    String nome = sc.nextLine();
 
     System.out.print("Quantidade no estoque:");
-    produto.qtd = sc.nextInt();
+    int qtd = sc.nextInt();
 
     System.out.print("Preço unitário:");
-    produto.preco = sc.nextDouble();
+    double preco = sc.nextDouble();
 
+    Produtos produto = new Produtos(nome, preco, qtd);
     System.out.println(produto.ToString());
 
     System.out.print("Adicionar mais quantidade no estoque:");

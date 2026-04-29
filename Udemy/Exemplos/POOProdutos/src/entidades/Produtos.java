@@ -8,6 +8,11 @@ public class Produtos {
     public Produtos(){
 
     }
+    public Produtos(String nome, double preco, int qtd){
+        this.nome = nome;
+        this.preco = preco;
+        this.qtd = qtd;
+    }
 
     public double total(){
         return qtd*preco;
