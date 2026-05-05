@@ -1,9 +1,9 @@
 package entidades;
 
 public class Produtos {
-    public String nome;
-    public double preco;
-    public int qtd;
+    private String nome;
+    private double preco;
+    private int qtd;
 
     public Produtos(){
 
@@ -14,9 +14,14 @@ public class Produtos {
         this.qtd = qtd;
     }
 
+    public  String getNome(){ return nome;}
+
+    public void setName(String nome){ this.nome = nome;}
+
     public double total(){
         return qtd*preco;
     }
+
     public void adicionarQtd(int qtd){
         this.qtd += qtd;
     }

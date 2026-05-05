@@ -17,8 +17,14 @@ void main() {
     System.out.print("Preço unitário:");
     double preco = sc.nextDouble();
 
+    sc.nextLine();
+
     Produtos produto = new Produtos(nome, preco, qtd);
     System.out.println(produto.ToString());
+
+    System.out.print("Informe novamente nome do produto:");
+    produto.setName(sc.nextLine());
+    System.out.println("Novo nome: " + produto.getNome());
 
     System.out.print("Adicionar mais quantidade no estoque:");
     produto.adicionarQtd(sc.nextInt());
