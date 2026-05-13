@@ -1,9 +1,14 @@
+import javax.print.attribute.standard.MediaSize;
+
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 void main() {
   // Criando um objeto de Formatação
   DateTimeFormatter dtf1 = DateTimeFormatter.ofPattern("dd/MM/yyyy");
   DateTimeFormatter dtf2 = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm");
+  DateTimeFormatter dtf3 = DateTimeFormatter.ofPattern("dd/MM/yyyy").withZone(ZoneId.systemDefault());
+  DateTimeFormatter dtf4 = DateTimeFormatter.ISO_DATE_TIME;
+  DateTimeFormatter dtf5 = DateTimeFormatter.ISO_INSTANT;
 
   // Buscando informação Data e Hora
   LocalDate d01 = LocalDate.now();
@@ -15,7 +20,6 @@ void main() {
   LocalDateTime d05 = LocalDateTime.parse("2026-05-12T19:30:01");
   Instant d06 = Instant.parse("2026-05-12T19:30:01Z");
   Instant d07 = Instant.parse("2026-05-12T19:30:01-03:00");
-
   LocalDate d08 = LocalDate.parse("12/05/2026", dtf1);
   LocalDateTime d09 = LocalDateTime.parse("12/05/2026 19:45", dtf2);
 
@@ -23,8 +27,11 @@ void main() {
   LocalDateTime d11 = LocalDateTime.of(2026, 01, 20, 19, 50);
 
   System.out.println("D01 "+ d01);
+  System.out.println("D01 V2: "+ d01.format(dtf1));
   System.out.println("D02 "+ d02);
+  System.out.println("D02 V2:"+ d02.format(dtf2));
   System.out.println("D03 "+ d03);
+  System.out.println("D03 V2:"+ dtf3.format(d03));
 
   System.out.println("D04 "+ d04);
   System.out.println("D05 "+ d05);
