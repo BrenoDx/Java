@@ -1,13 +1,16 @@
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 void main() {
-  
+  // Criando um objeto de Formatação
   DateTimeFormatter dtf1 = DateTimeFormatter.ofPattern("dd/MM/yyyy");
   DateTimeFormatter dtf2 = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm");
+
+  // Buscando informação Data e Hora
   LocalDate d01 = LocalDate.now();
   LocalDateTime d02 = LocalDateTime.now();
   Instant d03 = Instant.now();
 
+  // Convertendo String para Data e Hora
   LocalDate d04 = LocalDate.parse("2026-05-12");
   LocalDateTime d05 = LocalDateTime.parse("2026-05-12T19:30:01");
   Instant d06 = Instant.parse("2026-05-12T19:30:01Z");
