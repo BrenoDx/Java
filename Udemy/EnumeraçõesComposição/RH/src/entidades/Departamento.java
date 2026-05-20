@@ -6,4 +6,8 @@ public class Departamento {
     public Departamento(String dpto){
         this.nome = dpto;
     }
+
+    public String getNome() {
+        return nome;
+    }
 }

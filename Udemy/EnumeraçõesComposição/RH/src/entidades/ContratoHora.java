@@ -15,6 +15,11 @@ public class ContratoHora {
     }
 
     public Double total(){
+        return valorHora * horas;
 
+    }
+
+    public Date getData() {
+        return data;
     }
 }

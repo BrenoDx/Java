@@ -14,7 +14,7 @@ void main() throws ParseException {
   System.out.println("Dados Funcionário");
   System.out.println("Nome: ");
   String nome = sc.nextLine();
-  System.out.println("Nível do cargo: ");
+  System.out.println("Nível do cargo: (JUNIO;PLENO;SENIOR)");
   String nivel = sc.nextLine();
   System.out.println("Salário base: ");
   double salario = sc.nextDouble();
@@ -41,5 +41,16 @@ void main() throws ParseException {
     Date data = sdf.parse(dataString);
     func.adicionarContrato(new ContratoHora(data,vlrHora,horas));
   }
-  
+
+  System.out.println();
+  System.out.println("Informe mês e ano (MM/YYYY) pra calcular a renda:");
+  String mesEAno = sc.next();
+
+  int mes = Integer.parseInt(mesEAno.substring(0,2));
+  int ano = Integer.parseInt(mesEAno.substring(3));
+
+  System.out.println("Name: " + func.getNome());
+  System.out.println("Departamento: " + func.getDpto().getNome());
+  System.out.println("Renda de " + mesEAno + ": " + String.format("%.2f",func.renda(ano, mes)));
+
 }
