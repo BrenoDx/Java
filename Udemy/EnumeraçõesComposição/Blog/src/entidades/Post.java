@@ -1,10 +1,13 @@
 package entidades;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
 public class Post {
+    private static SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyyy HH:mm:ss");
+
     private Date data;
     private String titulo;
     private String conteudo;
@@ -25,5 +28,23 @@ public class Post {
 
     public void remover_comentarios(Comentarios comentarios){
         this.comentarios.remove(comentarios);
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+
+        sb.append(titulo + "\n");
+        sb.append(curtidas);
+        sb.append(" Likes - ");
+        sb.append(sdf.format(data) + "\n");
+        sb.append(conteudo + "\n");
+        sb.append("Cometários:\n");
+
+        for (Comentarios c : comentarios){
+            sb.append(c.getTexto() + "\n");
+        }
+
+        return sb.toString();
     }
 }
