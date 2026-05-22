@@ -12,4 +12,16 @@ public class Cliente {
         this.email = email;
         this.nascimento = nascimento;
     }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public Date getNascimento() {
+        return nascimento;
+    }
 }
