@@ -22,12 +22,27 @@ void main() {
         c7.emprestimo(200);
         System.out.println("Empréstimo!");
     }
-
+ 
     if(c5 instanceof ContaPoupanca){
         ContaPoupanca c8 = (ContaPoupanca)c5;
         c8.atualizarSaldo();
         System.out.println("Atualizado!");
     }
+
+    // @Override
+    Conta c9 = new Conta(1001, "ALEX", 1000);
+    c9.saque(200);
+    System.out.println(c9.getSaldo());
+
+    Conta c10 = new ContaPoupanca(1001,"Alex", 1000, 0.01);
+    c10.saque(200);
+    System.out.println(c10.getSaldo());
+
+    Conta c11 = new ContaEmpresa(1001, "alex", 1000, 100);
+    c11.saque(200);
+    System.out.println(c11.getSaldo());
+
+
 
 
 }

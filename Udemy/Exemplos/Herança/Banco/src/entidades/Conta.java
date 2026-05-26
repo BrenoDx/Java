@@ -11,8 +11,12 @@ public class Conta {
         this.saldo = saldo;
     }
 
+    public double getSaldo() {
+        return saldo;
+    }
+
     public void saque(double valor){
-        saldo -= valor;
+        saldo -= valor + 5.0;
     }
 
     public void deposito(double valor){

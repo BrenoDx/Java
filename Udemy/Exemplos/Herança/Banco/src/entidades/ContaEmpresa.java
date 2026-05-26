@@ -11,6 +11,12 @@ public class ContaEmpresa extends Conta{
         this.limite = limite;
     }
 
+    @Override
+    public void saque(double valor) {
+        super.saque(valor);
+        saldo -= 2;
+    }
+
     public void emprestimo(double valor){
         if(valor <= limite){
             saldo += valor - 10.0;
