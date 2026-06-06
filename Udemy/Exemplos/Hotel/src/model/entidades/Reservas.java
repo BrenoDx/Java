@@ -46,9 +46,9 @@ public class Reservas {
     public String toString() {
         return "Quarto: "
                 + getNumQuarto()
-                + ", checkIn: "
+                + ", check-In: "
                 + sdf.format(getCheckIn())
-                + ", checkOut: "
+                + ", check-Out: "
                 + sdf.format(getCheckOut())
                 + ", "
                 + duracao()
