@@ -29,13 +29,11 @@ void main() throws ParseException {
         System.out.println("Check-out (dd/mm/yyyy)");
         checkOut = sdf.parse(sc.next());
 
-        Date agora = new Date();
-        if(checkIn.before(agora) || checkOut.before(agora)){
-            System.out.println("A reserva não pode ser datas passadas");
-        }else if(!checkOut.after(checkIn)){
-            System.out.println("Erro: data  check-out é antes da data check-in");
+
+        String erro = reserva.updateDatas(checkIn,checkOut);
+        if(erro != null) {
+            System.out.println("Erro: " + erro);
         }else{
-            reserva.updateDatas(checkIn,checkOut);
             System.out.println("Reserva: " + reserva.toString());
         }
     }
