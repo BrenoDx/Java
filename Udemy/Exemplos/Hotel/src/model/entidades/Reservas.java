@@ -1,5 +1,7 @@
 package model.entidades;
 
+import model.exceptions.DomainException;
+
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.concurrent.TimeUnit;
@@ -11,7 +13,11 @@ public class Reservas {
     private Date checkIn;
     private Date checkOut;
 
-    public Reservas(int numQuarto, Date checkIn, Date checkOut){
+    public Reservas(int numQuarto, Date checkIn, Date checkOut) throws DomainException{
+        if(!checkOut.after(checkIn)) {
+            throw new DomainException("Erro: data  check-out é antes da data check-in");
+        }
+
         this.numQuarto = numQuarto;
         this.checkIn = checkIn;
         this.checkOut = checkOut;
@@ -36,17 +42,16 @@ public class Reservas {
         return TimeUnit.DAYS.convert(dif, TimeUnit.MILLISECONDS);
     }
 
-    public String updateDatas(Date checkIn, Date checkOut){
+    public void updateDatas(Date checkIn, Date checkOut) throws DomainException {
         Date agora = new Date();
         if(checkIn.before(agora) || checkOut.before(agora)){
-            return "A reserva não pode ser datas passadas";
+            throw new DomainException("A reserva não pode ser datas passadas");
         }else if(!checkOut.after(checkIn)) {
-            return "Erro: data  check-out é antes da data check-in";
+            throw new DomainException("Erro: data  check-out é antes da data check-in");
         }
 
         this.checkIn = checkIn;
         this.checkOut = checkOut;
-        return null;
 
     }
 

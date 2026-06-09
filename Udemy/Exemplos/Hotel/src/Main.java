@@ -1,25 +1,23 @@
 import model.entidades.Reservas;
+import model.exceptions.DomainException;
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
-void main() throws ParseException {
+void main() {
     Scanner sc = new Scanner(System.in);
     SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
 
-    System.out.println("Numero do quarto:");
-    int numQuarto = sc.nextInt();
+    try {
+        System.out.println("Numero do quarto:");
+        int numQuarto = sc.nextInt();
 
-    System.out.println("Check-In (dd/mm/yyyy)");
-    Date checkIn = sdf.parse(sc.next());
+        System.out.println("Check-In (dd/mm/yyyy)");
+        Date checkIn = sdf.parse(sc.next());
 
-    System.out.println("Check-out (dd/mm/yyyy)");
-    Date checkOut = sdf.parse(sc.next());
+        System.out.println("Check-out (dd/mm/yyyy)");
+        Date checkOut = sdf.parse(sc.next());
 
-    // Not check-out after = check-out não for depois de check-in
-    if(!checkOut.after(checkIn)){
-        System.out.println("Erro: data  check-out é antes da data check-in");
-    }else{
-        Reservas reserva = new Reservas(numQuarto,checkIn,checkOut);
+        Reservas reserva = new Reservas(numQuarto, checkIn, checkOut);
         System.out.println("Reserva: " + reserva.toString());
 
         System.out.println("Entre com dados para atualizar a reserva:");
@@ -29,14 +27,18 @@ void main() throws ParseException {
         System.out.println("Check-out (dd/mm/yyyy)");
         checkOut = sdf.parse(sc.next());
 
+        reserva.updateDatas(checkIn, checkOut);
 
-        String erro = reserva.updateDatas(checkIn,checkOut);
-        if(erro != null) {
-            System.out.println("Erro: " + erro);
-        }else{
-            System.out.println("Reserva: " + reserva.toString());
-        }
+        System.out.println("Reserva: " + reserva.toString());
+    }catch(ParseException e){
+        System.out.println("Formato data inválido");
+    }catch(DomainException e){
+        System.out.println("Erro na reserva: " + e.getMessage());
+    }catch(RuntimeException e){
+        System.out.println("Erro fatal: " + e);
     }
+
+
     sc.close();
 
 }
