@@ -1,5 +1,7 @@
 package model.entidades;
 
+import model.exceptions.ContaException;
+
 public class Conta {
     private int numero;
     private String titular;
@@ -17,14 +19,29 @@ public class Conta {
         this.saldo += vlr;
     }
 
-    public void saque(double vlr){
+    public void saque(double vlr) throws ContaException {
+        if(vlr > getSaldo()){
+            throw new ContaException("Erro: saldo insuficiente");
+        }else if(vlr > getSaqueLimite()){
+              throw new ContaException("Erro: valor acima do limite estabelecido");
+        }
 
+        this.saldo -= vlr;
     }
 
-    /*
+    public double getSaldo() {
+        return saldo;
+    }
 
-    saque !> saqueLimite
-    saque !> saldo
+    public double getSaqueLimite() {
+        return saqueLimite;
+    }
 
-    */
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("Novo saldo: " + getSaldo());
+
+        return sb.toString();
+    }
 }
