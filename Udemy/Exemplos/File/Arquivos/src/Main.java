@@ -18,17 +18,17 @@ void main() {
         }
     }
 
-    */
     FileReader fr = null;
     BufferedReader br = null;
+     */
     String path = "caminho";
-    try{
+    try(BufferedReader br = new BufferedReader(new FileReader(path))){
         /*
         fr = new FileReader(path);
         br = new BufferedReader(fr);
         */
 
-        br = new BufferedReader(new FileReader(path));
+        //br = new BufferedReader(new FileReader(path));
         String line = br.readLine();
 
         while(line != null){
@@ -38,17 +38,6 @@ void main() {
 
     }catch (IOException e){
         System.out.println("Error: " + e.getMessage());
-    }finally {
-        try {
-            if (br != null) {
-                br.close();
-            }
-            if (fr != null) {
-                fr.close();
-            }
-        }catch (IOException e){
-            e.printStackTrace();
-        }
     }
 
 }
