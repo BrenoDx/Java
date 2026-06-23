@@ -40,8 +40,8 @@ void main() {
         }catch (IOException e){
             System.out.println("Error: " + e.getMessage());
         }
-        */
-      // FileWriter & BufferedWriter
+
+    // FileWriter & BufferedWriter
     String[] palavras = new String[] {"Olá", "Hello", "World"};
     String path = "caminho";
     // Sem o TRUE no FileWriter irá sobrescrever que tiver dentro do arquvio
@@ -54,4 +54,27 @@ void main() {
     }catch (IOException e){
         e.printStackTrace();
     }
+     */
+    // Manipulando pasta/arquivos
+    Scanner sc  = new Scanner(System.in);
+
+    System.out.print("Caminho:");
+    String strPath = sc.nextLine();
+
+    File path = new File(strPath);
+    File[] pastas = path.listFiles(File::isDirectory);
+    System.out.println("Pastas:");
+    for(File pasta : pastas){
+        System.out.println(pasta);
+    }
+
+    File[] arquivos = path.listFiles(File::isFile);
+    System.out.println("Arquivos:");
+
+    for(File arquivo : arquivos){
+        System.out.println(arquivo);
+    }
+
+    boolean status = new File(strPath + "\\teste").mkdir();
+    System.out.println("Pasta criada com sucesso: " + status);
 }
