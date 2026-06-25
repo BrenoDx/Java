@@ -54,7 +54,7 @@ void main() {
     }catch (IOException e){
         e.printStackTrace();
     }
-     */
+
     // Manipulando pasta/arquivos
     Scanner sc  = new Scanner(System.in);
 
@@ -77,4 +77,16 @@ void main() {
 
     boolean status = new File(strPath + "\\teste").mkdir();
     System.out.println("Pasta criada com sucesso: " + status);
+    */
+    // Informação do caminho
+    Scanner sc  = new Scanner(System.in);
+
+    System.out.println("caminho:");
+    String strCaminho = sc.nextLine();
+
+    File path = new File(strCaminho);
+
+    System.out.println("getPath: " + path.getPath());
+    System.out.println("getName:" + path.getName());
+    System.out.println("getParent: " + path.getParent());
 }
