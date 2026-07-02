@@ -14,4 +14,20 @@ public class AluguelCarro {
         this.retorno = retorno;
         this.veiculo = veiculo;
     }
+
+    public LocalDateTime getRetorno() {
+        return retorno;
+    }
+
+    public LocalDateTime getSaida() {
+        return saida;
+    }
+
+    public Fatura getFatura() {
+        return fatura;
+    }
+
+    public void setFatura(Fatura fatura) {
+        this.fatura = fatura;
+    }
 }
