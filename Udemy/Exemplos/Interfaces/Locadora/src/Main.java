@@ -1,6 +1,7 @@
 import models.entidades.AluguelCarro;
 import models.entidades.Veiculo;
 import models.services.AluguelService;
+import models.services.BrasilTaxaService;
 import models.services.TaxaService;
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
@@ -31,7 +32,7 @@ void main() {
     double valorDia = sc.nextDouble();
 
 
-    AluguelService aluguelService = new AluguelService(valorHora,valorDia, new TaxaService());
+    AluguelService aluguelService = new AluguelService(valorHora,valorDia, new BrasilTaxaService());
     aluguelService.processarFatura(ac);
 
     System.out.println("Fatura:");
