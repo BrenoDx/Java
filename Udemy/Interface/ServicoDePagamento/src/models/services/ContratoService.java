@@ -1,10 +1,14 @@
 package models.services;
 
 import models.entidades.Contrato;
+import models.entidades.Parcelas;
 
 public class ContratoService {
+    private ServicoPagamentoService sps;
 
-    public void processarContrato(Contrato contrato, int mes){
-
+    public ContratoService(ServicoPagamentoService sps){
+        this.sps = sps;
     }
+
+
 }
