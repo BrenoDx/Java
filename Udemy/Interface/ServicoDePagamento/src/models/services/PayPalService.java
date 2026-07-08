@@ -2,11 +2,13 @@ package models.services;
 
 public class PayPalService implements ServicoPagamentoService{
 
-    public double calcularJuros(double vlr, int meses){
-        return 0;
+    public double calcularJuros(double vlr, int mes){
+        double juros = (vlr * 0.01)*mes;
+        return juros;
     }
 
     public double taxaPagamento(double vlr){
-        return 0;
+        double valorTotal = vlr * 0.02;
+        return valorTotal;
     }
 }
