@@ -1,4 +1,5 @@
 import models.entidades.Contrato;
+import models.entidades.Parcelas;
 import models.services.ContratoService;
 import models.services.PayPalService;
 
@@ -27,7 +28,12 @@ void main() {
         int parcelas = sc.nextInt();
 
         contr = new Contrato(numContr,data,vlr);
-        
+        contrService.processarContrato(contr, parcelas);
+
+        System.out.println("Parcelas: ");
+        for(Parcelas p : contr.getParc()){
+            System.out.println(p);
+        }
 
     }catch(ParseException e){
         System.out.print("Erro formato DATA inválida");
