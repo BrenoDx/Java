@@ -14,6 +14,13 @@ public class ContaService {
     }
 
     public void sacar(Conta conta, double vlr){
+        if (conta.getSaldo() < vlr){
+            System.out.println("Saldo insuficiente!");
+            mostrarSaldo(conta);
+            return ;
+        }
+
+        System.out.println("Finalizando a operação");
         double saldoAtualizado = conta.getSaldo() - vlr;
         conta.setSaldo(saldoAtualizado);
         mostrarSaldo(conta);

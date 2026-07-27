@@ -13,9 +13,11 @@ public static void main(String[] args){
     cs.mostrarSaldo(c1);
     cs.mostrarSaldo(c2);
 
+    System.out.println("Operação Depósito:");
     cs.depositar(c1,500);
     cs.depositar(c2,700);
 
+    System.out.println("Operação Sacar:");
     cs.sacar(c1,600);
     cs.sacar(c2,550);
 }
