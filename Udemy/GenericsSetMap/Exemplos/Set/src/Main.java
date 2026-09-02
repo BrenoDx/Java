@@ -1,3 +1,5 @@
+import entidades.Produto;
+
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 void main() {
@@ -34,5 +36,14 @@ void main() {
     Set<Integer> e = new TreeSet<>(a);
     e.removeAll(b);
     System.out.println(e);
+
+    // Igualdade (Equals & HashCode) com SET
+    Set<Produto> set2 = new HashSet<>();
+    set2.add(new Produto("TV", 900.0));
+    set2.add(new Produto("Notebook", 1200.0));
+    set2.add(new Produto("Tablet", 400.0));
+
+    Produto prod = new Produto("Notebook", 1200.0);
+    System.out.println(set2.contains(prod));
 
 }
