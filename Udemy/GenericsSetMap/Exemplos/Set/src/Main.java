@@ -46,4 +46,13 @@ void main() {
     Produto prod = new Produto("Notebook", 1200.0);
     System.out.println(set2.contains(prod));
 
+    // Comparar elementos com TreeSet
+    Set<Produto> set3 = new TreeSet<>();
+    set3.add(new Produto("TV", 900.0));
+    set3.add(new Produto("Notebook", 1200.0));
+    set3.add(new Produto("Tablet", 400.0));
+
+    for(Produto p : set3) {
+        System.out.println(p);
+    }
 }
