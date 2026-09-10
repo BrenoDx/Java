@@ -11,7 +11,7 @@ void main() {
 
     //list.sort(new MyComparator()); -> Comparator classe separada
 
-    // Classe anônima
+    /* Classe anônima
     Comparator<Produtos> comp = new Comparator<Produtos>() {
         @Override
         public int compare(Produtos p1, Produtos p2) {
@@ -20,6 +20,11 @@ void main() {
     };
 
     list.sort(comp);
+    */
+    // Expressão Lambda
+    // Comparator<Produtos> comp = (p1,p2) -> p1.getNome().toUpperCase().compareTo(p2.getNome().toUpperCase());
+
+    list.sort((p1,p2) -> p1.getNome().toUpperCase().compareTo(p2.getNome().toUpperCase()));
 
     for(Produtos p : list){
         System.out.println(p);
