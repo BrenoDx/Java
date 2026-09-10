@@ -25,8 +25,14 @@ public class Produtos {
         this.vlr = vlr;
     }
 
+    // Estático trabalha com obj passado pelo params:
     public static boolean staticProdutoPredicate(Produtos p){
         return p.getVlr() >= 100.0;
+    }
+
+    // Método de instância
+    public boolean noStaticProdutoPredicate(){
+        return vlr >= 100.0;
     }
 
     @Override

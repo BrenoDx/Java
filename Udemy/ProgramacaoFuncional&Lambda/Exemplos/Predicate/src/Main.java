@@ -13,7 +13,8 @@ void main() {
 
     //list.removeIf(new ProdutoPredicate()); // or (p -> p.getVlr() >= 100.0)
 
-    list.removeIf(Produtos::staticProdutoPredicate); // method Reference com método estático
+    //list.removeIf(Produtos::staticProdutoPredicate);  method Reference com método estático
+    list.removeIf(Produtos::noStaticProdutoPredicate); // method Reference sem método estático
 
     for(Produtos p : list){
         System.out.println(p);
