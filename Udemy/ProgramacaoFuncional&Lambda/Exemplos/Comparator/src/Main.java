@@ -21,9 +21,10 @@ void main() {
 
     list.sort(comp);
     */
-    Comparator<Produtos> comp = (p1,p2) -> p1.getNome().toUpperCase().compareTo(p2.getNome().toUpperCase());
+    // Expressão Lambda
+    // Comparator<Produtos> comp = (p1,p2) -> p1.getNome().toUpperCase().compareTo(p2.getNome().toUpperCase());
 
-    list.sort(comp);
+    list.sort((p1,p2) -> p1.getNome().toUpperCase().compareTo(p2.getNome().toUpperCase()));
 
     for(Produtos p : list){
         System.out.println(p);
