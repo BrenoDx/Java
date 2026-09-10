@@ -25,6 +25,10 @@ public class Produtos {
         this.vlr = vlr;
     }
 
+    public static boolean staticProdutoPredicate(Produtos p){
+        return p.getVlr() >= 100.0;
+    }
+
     @Override
     public String toString() {
         return "Produtos{" +
