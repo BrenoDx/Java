@@ -21,6 +21,14 @@ public class Produto {
         return vlr;
     }
 
+    public static void staticVlrUpdate(Produto p){
+        p.setVlr(p.getVlr() * 1.1);
+    }
+
+    public void noStaticVlrUpdate(){
+        vlr = vlr * 1.1;
+    }
+
     public void setVlr(double vlr) {
         this.vlr = vlr;
     }

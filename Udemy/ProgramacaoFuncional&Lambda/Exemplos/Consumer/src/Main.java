@@ -12,7 +12,12 @@ void main() {
     list.add(new Produto("Tablet",350.50));
     list.add(new Produto("HD Case",80.90));
 
-    list.forEach(new VlrUpdate());
+    //list.forEach(new VlrUpdate()); interface implementada
+
+    //list.forEach(Produto::staticVlrUpdate); Referebce method estático
+    list.forEach(Produto::noStaticVlrUpdate);
+
+
 
     list.forEach(System.out::println);
 }
