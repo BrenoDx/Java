@@ -14,10 +14,11 @@ void main() {
 
     //list.forEach(new VlrUpdate()); interface implementada
 
-    //list.forEach(Produto::staticVlrUpdate); Referebce method estático
-    list.forEach(Produto::noStaticVlrUpdate);
+    //list.forEach(Produto::staticVlrUpdate); Reference method estático
+    // list.forEach(Produto::noStaticVlrUpdate); Reference method não estático
 
-
+    Consumer<Produto> cons = p -> p.setVlr(p.getVlr()*1.1); // Expressão lambda declarada
+    list.forEach(p -> p.setVlr(p.getVlr()*1.1)); // Expressão lambda inline
 
     list.forEach(System.out::println);
 }
