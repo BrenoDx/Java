@@ -17,8 +17,8 @@ void main() {
     //list.removeIf(Produtos::noStaticProdutoPredicate);  method Reference sem método estático
 
 
-    Predicate<Produtos> pred = p -> p.getVlr() >= 100; //Expressão labmda declarada
-    list.removeIf(pred);
+    // Predicate<Produtos> pred = p -> p.getVlr() >= 100; Expressão lambda declarada
+    list.removeIf(p -> p.getVlr() >= 100); // inline
 
     for(Produtos p : list){
         System.out.println(p);
