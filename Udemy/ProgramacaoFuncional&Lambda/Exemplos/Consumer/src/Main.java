@@ -12,7 +12,13 @@ void main() {
     list.add(new Produto("Tablet",350.50));
     list.add(new Produto("HD Case",80.90));
 
-    list.forEach(new VlrUpdate());
+    //list.forEach(new VlrUpdate()); interface implementada
+
+    //list.forEach(Produto::staticVlrUpdate); Reference method estático
+    // list.forEach(Produto::noStaticVlrUpdate); Reference method não estático
+
+    Consumer<Produto> cons = p -> p.setVlr(p.getVlr()*1.1); // Expressão lambda declarada
+    list.forEach(p -> p.setVlr(p.getVlr()*1.1)); // Expressão lambda inline
 
     list.forEach(System.out::println);
 }
