@@ -24,4 +24,12 @@ public class Produto {
     public void setVlr(double vlr) {
         this.vlr = vlr;
     }
+
+    public static String staticUpperCaseNome(Produto p){
+        return p.getNome().toUpperCase();
+    }
+
+    public String noStaticUpperCaseNome(){
+        return nome.toUpperCase();
+    }
 }
