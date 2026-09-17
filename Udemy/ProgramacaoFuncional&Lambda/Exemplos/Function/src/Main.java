@@ -15,7 +15,11 @@ void main() {
     //List<String> nomes = list.stream().map(new UpperCaseName()).collect(Collectors.toList()); Implementação de Interface
 
     //List<String> nomes = list.stream().map(Produto::staticUpperCaseNome).collect(Collectors.toList()); Método estático
-    List<String> nomes = list.stream().map(Produto::noStaticUpperCaseNome).collect(Collectors.toList());// Método não estático
-    List<String> nomes = list.stream().map(new UpperCaseName()).collect(Collectors.toList());
+    //List<String> nomes = list.stream().map(Produto::noStaticUpperCaseNome).collect(Collectors.toList()); Método não estático
+
+    //Lambda
+    Function<Produto,String> func = p-> p.getNome().toUpperCase();
+    //List<String> nomes = list.stream().map(func).collect(Collectors.toList());
+    List<String> nomes = list.stream().map(p->p.getNome().toUpperCase()).collect(Collectors.toList());
     nomes.forEach(System.out::println);
 }
