@@ -3,10 +3,12 @@ package com.educandoweb.curso.entities;
 import jakarta.persistence.*;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 @Entity
-@Table(name = "tdb_user")
+@Table(name = "tb_user")
 public class User implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -18,6 +20,9 @@ public class User implements Serializable {
     private String emai;
     private String phone;
     private String password;
+
+    @OneToMany(mappedBy = "user")
+    private List<Order> listOrder = new ArrayList<>();
 
     public User(){
 
@@ -76,6 +81,10 @@ public class User implements Serializable {
         if (o == null || getClass() != o.getClass()) return false;
         User user = (User) o;
         return Objects.equals(id, user.id);
+    }
+
+    public List<Order> getListOrder() {
+        return listOrder;
     }
 
     @Override
