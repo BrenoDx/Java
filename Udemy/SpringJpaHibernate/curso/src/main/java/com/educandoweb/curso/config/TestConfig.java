@@ -1,8 +1,10 @@
 package com.educandoweb.curso.config;
 
+import com.educandoweb.curso.entities.Category;
 import com.educandoweb.curso.entities.Order;
-import com.educandoweb.curso.entities.OrderStatus;
+import com.educandoweb.curso.entities.enums.OrderStatus;
 import com.educandoweb.curso.entities.User;
+import com.educandoweb.curso.repositories.CategoryRepository;
 import com.educandoweb.curso.repositories.OrderRepository;
 import com.educandoweb.curso.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,6 +23,9 @@ public class TestConfig implements CommandLineRunner {
     private UserRepository userRepository;
 
     @Autowired
+    private CategoryRepository categoryRepository;
+
+    @Autowired
     private OrderRepository orderRepository;
 
     @Override
@@ -28,6 +33,12 @@ public class TestConfig implements CommandLineRunner {
 
         User u1 = new User(null, "Maria Brown", "maria@email.com", "111111", "12314");
         User u2 = new User(null, "Alex Green", "alex@email.com", "12343","35142353");
+
+        Category cat1 = new Category(null, "Electronics");
+        Category cat2 = new Category(null, "Books");
+        Category cat3 = new Category(null, "Computers");
+
+        categoryRepository.saveAll(Arrays.asList(cat1,cat2,cat3));
 
         Order o1 = new Order(null, Instant.parse("2019-06-20T19:53:07Z"),u1, OrderStatus.WAITING_PAYMENT);
         Order o2 = new Order(null, Instant.parse("2019-07-21T03:42:10Z"),u2, OrderStatus.PAID);

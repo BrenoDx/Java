@@ -1,7 +1,7 @@
 package com.educandoweb.curso.entities;
 
+import com.educandoweb.curso.entities.enums.OrderStatus;
 import com.fasterxml.jackson.annotation.JsonFormat;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
 import java.io.Serializable;
