@@ -2,10 +2,12 @@ package com.educandoweb.curso.config;
 
 import com.educandoweb.curso.entities.Category;
 import com.educandoweb.curso.entities.Order;
+import com.educandoweb.curso.entities.Product;
 import com.educandoweb.curso.entities.enums.OrderStatus;
 import com.educandoweb.curso.entities.User;
 import com.educandoweb.curso.repositories.CategoryRepository;
 import com.educandoweb.curso.repositories.OrderRepository;
+import com.educandoweb.curso.repositories.ProductRepository;
 import com.educandoweb.curso.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
@@ -28,6 +30,9 @@ public class TestConfig implements CommandLineRunner {
     @Autowired
     private OrderRepository orderRepository;
 
+    @Autowired
+    private ProductRepository productRepository;
+
     @Override
     public void run(String... args) throws Exception {
 
@@ -38,7 +43,14 @@ public class TestConfig implements CommandLineRunner {
         Category cat2 = new Category(null, "Books");
         Category cat3 = new Category(null, "Computers");
 
+        Product p1 = new Product(null,"The Lord of the Rings","teste", 90.5, "");
+        Product p2 = new Product(null,"Smart TV", "teste", 2190.0, "");
+        Product p3 = new Product(null,"Macbook Pro", "teste", 1250.0, "");
+        Product p4 = new Product(null,"Pc", "teste", 1200.0, "");
+        Product p5 = new Product(null,"Rails for Dummies", "teste", 100.99, "");
+
         categoryRepository.saveAll(Arrays.asList(cat1,cat2,cat3));
+        productRepository.saveAll(Arrays.asList(p1,p2,p3,p4,p5));
 
         Order o1 = new Order(null, Instant.parse("2019-06-20T19:53:07Z"),u1, OrderStatus.WAITING_PAYMENT);
         Order o2 = new Order(null, Instant.parse("2019-07-21T03:42:10Z"),u2, OrderStatus.PAID);
