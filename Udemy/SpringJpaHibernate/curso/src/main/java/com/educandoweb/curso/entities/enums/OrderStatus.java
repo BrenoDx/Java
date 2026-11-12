@@ -1,4 +1,4 @@
-package com.educandoweb.curso.entities;
+package com.educandoweb.curso.entities.enums;
 
 public enum OrderStatus {
     WAITING_PAYMENT(1),
